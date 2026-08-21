@@ -1,0 +1,3 @@
+{
+  "name":"meta-ads-anomaly-alert","taskrailCompatibility":"3.0.x","profile":"portable-node@1","runtime":"node","managed":true,"sourceDir":".","validationCommand":"node --check src/main.mjs","testCommand":"node --test test/*.test.mjs","requiredChecks":["validation","test","health"],"runtimeHealthCommand":"node src/main.mjs --health","capabilities":["meta-ads","ads-baselines","ads-anomaly-detection","telegram-bot"],"components":["config","log","timeout"],"isolation":{"level":"strict","privateTmp":true,"protectHome":true,"noNewPrivileges":true},"deployDir":"../.taskrail/meta-ads-anomaly-alert/live"
+}

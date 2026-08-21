@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {dueFollowups} from '../src/main.mjs';test('returns only due open records',()=>{const r=dueFollowups([{id:1,followUp:'2026-01-01'},{id:2,followUp:'2027-01-01'},{id:3,followUp:'2026-01-01',closed:true}],new Date('2026-08-22'));assert.deepEqual(r.map(x=>x.id),[1])});

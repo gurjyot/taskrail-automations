@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {run} from '../src/main.mjs';test('delegates reusable logic to capability',async()=>{let called=0;const r=await run({target:'https://example.invalid',check:async()=>{called++;return {ok:true}}});assert.equal(called,1);assert.equal(r.ok,true)});

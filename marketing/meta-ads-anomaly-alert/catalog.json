@@ -1,0 +1,1 @@
+{"schema":1,"name":"meta-ads-anomaly-alert","category":"marketing","taskrailCompatibility":"3.0.x","capabilities":["meta-ads","ads-baselines","ads-anomaly-detection","telegram-bot"],"components":["config","log","timeout"],"certification":{"status":"reference","testedAt":"2026-08-22"},"health":{"contract":"runtimeHealthCommand"}}

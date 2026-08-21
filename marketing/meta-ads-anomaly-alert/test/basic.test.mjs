@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {evaluate} from '../src/main.mjs';test('alerts only when threshold is crossed',()=>{const r=evaluate({current:{roas:1.4,cpc:10},baseline:{roas:2,cpc:10},thresholds:{roas:.2,cpc:.2}});assert.equal(r.alert,true);assert.equal(r.anomalies.length,1);assert.equal(r.anomalies[0].metric,'roas')});

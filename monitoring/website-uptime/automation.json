@@ -1,0 +1,16 @@
+{
+  "name": "website-uptime",
+  "taskrailCompatibility": "3.0.x",
+  "profile": "portable-node@1",
+  "runtime": "node",
+  "managed": true,
+  "sourceDir": ".",
+  "validationCommand": "node --check src/main.mjs",
+  "testCommand": "node --test test/*.test.mjs",
+  "runtimeHealthCommand": "node src/main.mjs --health",
+  "capabilities": ["http-health-check"],
+  "components": ["http"],
+  "isolation": {"level":"strict","privateTmp":true,"protectHome":true,"noNewPrivileges":true},
+  "requiredChecks": ["validation","test","health"],
+  "deployDir": "../.taskrail/website-uptime/live"
+}

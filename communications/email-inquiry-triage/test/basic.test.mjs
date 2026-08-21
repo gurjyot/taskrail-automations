@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {classify} from '../src/main.mjs';test('recognizes service inquiry',()=>assert.equal(classify({subject:'Need Shopify website quote'}).actionable,true));test('ignores spam',()=>assert.equal(classify({subject:'SEO project',spam:true}).actionable,false));

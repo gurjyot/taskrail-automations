@@ -1,0 +1,1 @@
+export async function run({check,target}={}){if(typeof check!=='function')return {ok:false,reason:'capability_required'};return check({target})}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}
