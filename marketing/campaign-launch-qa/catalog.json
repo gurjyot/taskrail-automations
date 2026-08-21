@@ -1,0 +1,1 @@
+{"name":"campaign-launch-qa","category":"marketing","taskrailCompatibility":"3.0.x","capabilities":["meta-ads","google-ads"],"components":["config","log"],"certification":"reference","health":"runtimeHealthCommand"}

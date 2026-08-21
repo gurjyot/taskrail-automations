@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('prioritizes critical',()=>{const r=evaluate({accounts:[{name:'A',status:'healthy'},{name:'B',status:'critical'}]});assert.equal(r.priority[0].name,'B')});

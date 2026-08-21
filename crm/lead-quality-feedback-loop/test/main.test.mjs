@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('scores quality',()=>{const r=evaluate({leads:[{sourceId:'a',status:'qualified'},{sourceId:'a',status:'junk'}],spendBySource:{a:100}});assert.equal(r.results[0].qualityRate,.5)});

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags overspend',()=>{const r=evaluate({spent:700,budget:1000,elapsedDays:10,totalDays:30});assert.equal(r.status,'overspend');assert.equal(r.alert,true)});
