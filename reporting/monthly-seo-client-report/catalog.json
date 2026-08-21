@@ -1,0 +1,1 @@
+{"name":"monthly-seo-client-report","category":"reporting","taskrailCompatibility":"3.0.x","capabilities":["google-search-console","google-business-profile","telegram-bot"],"components":["config","log"],"certification":"reference","health":"runtimeHealthCommand"}

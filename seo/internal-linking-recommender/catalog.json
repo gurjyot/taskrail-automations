@@ -1,0 +1,1 @@
+{"name":"internal-linking-recommender","category":"seo","taskrailCompatibility":"3.0.x","capabilities":["wordpress"],"components":["config","log"],"certification":"reference","health":"runtimeHealthCommand"}

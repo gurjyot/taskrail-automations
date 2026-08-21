@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('finds page-one opportunity',()=>{const r=evaluate({rows:[{query:'x',impressions:1000,clicks:10,position:8}]});assert.equal(r.count,1)});

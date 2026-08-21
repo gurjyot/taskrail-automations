@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('builds brief',()=>assert.equal(evaluate({primaryKeyword:'seo agency',queries:['seo agency delhi']}).autoPublish,false));

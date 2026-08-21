@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('detects local decline',()=>assert.equal(evaluate({current:{mapsViews:50},previous:{mapsViews:100}}).status,'watch'));
