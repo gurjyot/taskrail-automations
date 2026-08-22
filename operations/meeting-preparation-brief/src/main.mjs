@@ -1,0 +1,1 @@
+export function evaluate({performance=[],issues=[],approvals=[],decisions=[]}={}){return{ok:true,brief:{performance,issues,approvals,decisions},attention:issues.length+approvals.length+decisions.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

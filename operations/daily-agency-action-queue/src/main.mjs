@@ -1,0 +1,1 @@
+export function evaluate({items=[]}={}){const rank={critical:4,high:3,medium:2,low:1};const queue=items.filter(i=>i.actionable!==false).sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0));return{ok:true,queue,count:queue.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

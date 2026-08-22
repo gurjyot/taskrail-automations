@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('is deny by default',()=>assert.equal(evaluate({resources:[{name:'x'}]}).mutationAuthorized,false))

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags upcoming renewal',()=>assert.equal(evaluate({now:0,renewals:[{renewAt:'1970-01-10'}]}).alert,true))

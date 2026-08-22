@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('normalizes action item',()=>assert.equal(evaluate({actionItems:[{text:'x'}]}).tasks[0].status,'pending'))

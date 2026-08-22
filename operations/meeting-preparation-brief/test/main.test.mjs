@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('counts attention items',()=>assert.equal(evaluate({issues:[1],decisions:[1]}).attention,2))

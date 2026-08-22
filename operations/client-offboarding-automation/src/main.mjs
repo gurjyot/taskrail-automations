@@ -1,0 +1,1 @@
+export function evaluate({resources=[]}={}){const actions=resources.map(r=>({resource:r.name||r.id,action:r.action||'review-and-revoke',status:'planned'}));return{ok:true,actions,mutationAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

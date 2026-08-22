@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('blocks incomplete onboarding',()=>assert.equal(evaluate({checks:[{required:true,complete:false}]}).ready,false))

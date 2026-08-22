@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags overdue item',()=>assert.equal(evaluate({now:2,deliverables:[{dueAt:'1970-01-01T00:00:00.001Z'}]}).alert,true))

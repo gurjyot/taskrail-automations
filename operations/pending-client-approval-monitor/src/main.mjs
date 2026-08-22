@@ -1,0 +1,1 @@
+export function evaluate({items=[],slaHours=48,now=Date.now()}={}){const overdue=items.filter(i=>i.status==='pending-approval'&&(now-Date.parse(i.requestedAt))/3600000>=slaHours);return{ok:true,alert:overdue.length>0,overdue};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

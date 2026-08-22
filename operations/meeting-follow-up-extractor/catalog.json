@@ -1,0 +1,1 @@
+{"schema":1,"name":"meeting-follow-up-extractor","category":"operations","taskrailCompatibility":"3.0.x","capabilities":[],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}

@@ -1,0 +1,1 @@
+export function evaluate({deliverables=[],now=Date.now()}={}){const overdue=deliverables.filter(d=>d.completed!==true&&Date.parse(d.dueAt)<now);return{ok:true,alert:overdue.length>0,overdue};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}
