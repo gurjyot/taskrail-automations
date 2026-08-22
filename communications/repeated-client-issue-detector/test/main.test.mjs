@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('finds repeats',()=>assert.equal(evaluate({issues:[{issueKey:'x'},{issueKey:'x'},{issueKey:'x'}]}).alert,true))

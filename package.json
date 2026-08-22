@@ -1,17 +1,9 @@
 {
   "name": "taskrail-automations",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
-  "scripts": {
-    "check": "node scripts/check.mjs",
-    "test": "node --test",
-    "scaffold": "node scripts/scaffold.mjs"
-  },
-  "peerDependencies": {
-    "taskrail": ">=3.0.0 <4"
-  }
+  "engines": {"node": ">=22"},
+  "scripts": {"check": "node scripts/check.mjs", "test": "node --test", "scaffold": "node scripts/scaffold.mjs"},
+  "peerDependencies": {"taskrail": ">=3.0.0 <4"}
 }

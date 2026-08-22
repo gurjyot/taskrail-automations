@@ -1,0 +1,1 @@
+export function evaluate({renewals=[],warnDays=30,now=Date.now()}={}){const due=renewals.filter(r=>r.renewAt&&(Date.parse(r.renewAt)-now)/86400000<=warnDays);return{ok:true,alert:due.length>0,due};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

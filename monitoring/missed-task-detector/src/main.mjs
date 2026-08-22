@@ -1,0 +1,1 @@
+export function evaluate({tasks=[],now=Date.now()}={}){const missed=tasks.filter(t=>!t.completed&&Date.parse(t.dueAt)<now);return{ok:true,alert:missed.length>0,missed};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

@@ -1,0 +1,1 @@
+export function evaluate({resources=[],warnDays=30,now=Date.now()}={}){const due=resources.map(r=>({...r,daysLeft:(Date.parse(r.expiresAt)-now)/86400000})).filter(r=>Number.isFinite(r.daysLeft)&&r.daysLeft<=warnDays);return{ok:true,alert:due.length>0,due,count:due.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

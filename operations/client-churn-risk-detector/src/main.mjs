@@ -1,0 +1,1 @@
+export function evaluate({signals=[],threshold=5}={}){const score=signals.reduce((a,x)=>a+(x.active?Number(x.weight||1):0),0);return{ok:true,score,alert:score>=threshold,status:score>=threshold*1.5?'high':'normal'};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

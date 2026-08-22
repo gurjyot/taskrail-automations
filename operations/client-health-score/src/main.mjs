@@ -1,0 +1,1 @@
+export function evaluate({signals=[]}={}){let w=0,s=0;for(const x of signals){const weight=Number(x.weight||1),value=Math.max(0,Math.min(100,Number(x.score||0)));w+=weight;s+=value*weight}const score=w?s/w:0;return{ok:true,score,status:score>=80?'healthy':score>=60?'watch':'risk'};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

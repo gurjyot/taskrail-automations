@@ -1,0 +1,1 @@
+export function evaluate({invoices=[],now=Date.now()}={}){const overdue=invoices.filter(i=>i.paid!==true&&Date.parse(i.dueAt)<now);return{ok:true,overdue,count:overdue.length,sendAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

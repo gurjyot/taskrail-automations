@@ -1,0 +1,1 @@
+export function evaluate({checks=[]}={}){const missing=checks.filter(c=>c.required!==false&&c.complete!==true);return{ok:true,ready:missing.length===0,missing};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('sorts critical first',()=>assert.equal(evaluate({items:[{severity:'low'},{severity:'critical'}]}).queue[0].severity,'critical'))

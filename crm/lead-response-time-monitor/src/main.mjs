@@ -1,0 +1,1 @@
+export function evaluate({leads=[],slaMinutes=30,now=Date.now()}={}){const overdue=leads.filter(l=>!l.contactedAt&&Number.isFinite(Date.parse(l.createdAt))&&(now-Date.parse(l.createdAt))/60000>=slaMinutes);return{ok:true,alert:overdue.length>0,overdue,count:overdue.length,slaMinutes};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

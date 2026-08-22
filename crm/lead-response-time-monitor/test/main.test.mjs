@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags uncontacted lead beyond SLA',()=>{const r=evaluate({now:Date.parse('2026-08-23T00:00:00Z'),slaMinutes:30,leads:[{createdAt:'2026-08-22T23:00:00Z'}]});assert.equal(r.alert,true)})

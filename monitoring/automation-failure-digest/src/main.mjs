@@ -1,0 +1,1 @@
+export function evaluate({runs=[]}={}){const failures=runs.filter(r=>!['success','healthy','pass'].includes(String(r.status||'').toLowerCase()));return{ok:true,alert:failures.length>0,failures,count:failures.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

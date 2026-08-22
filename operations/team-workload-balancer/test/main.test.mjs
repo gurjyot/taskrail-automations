@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('finds overload',()=>assert.equal(evaluate({overloadThreshold:1,tasks:[{owner:'a',weight:2}]}).overloaded.length,1))

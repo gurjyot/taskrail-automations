@@ -1,0 +1,1 @@
+export function evaluate({currentRevenue,baselineRevenue,tolerance=0.25}={}){const c=Number(currentRevenue),b=Number(baselineRevenue);const change=b?(c-b)/b:0;return{ok:true,alert:b>0&&change<=-Math.abs(tolerance),currentRevenue:c,baselineRevenue:b,change};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

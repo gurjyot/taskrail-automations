@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('queues pending post',()=>assert.equal(evaluate({posts:[{status:'pending-approval'}]}).count,1))

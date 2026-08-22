@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags failed form',()=>assert.equal(evaluate({forms:[{submitted:false,confirmed:false}]}).alert,true))

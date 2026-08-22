@@ -1,0 +1,1 @@
+export function evaluate({reports=[]}={}){const failed=reports.filter(r=>r.expected!==false&&r.delivered!==true);return{ok:true,alert:failed.length>0,failed,count:failed.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

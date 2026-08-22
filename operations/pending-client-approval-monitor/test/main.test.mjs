@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags delayed approval',()=>assert.equal(evaluate({now:Date.parse('2026-08-23'),items:[{status:'pending-approval',requestedAt:'2026-08-01'}]}).alert,true))

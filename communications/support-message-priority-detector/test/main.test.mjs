@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('detects urgent phrase',()=>assert.equal(evaluate({messages:[{text:'site is down'}]}).urgent.length,1))

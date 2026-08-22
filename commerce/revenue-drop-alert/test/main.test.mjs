@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags revenue drop',()=>assert.equal(evaluate({currentRevenue:50,baselineRevenue:100}).alert,true))

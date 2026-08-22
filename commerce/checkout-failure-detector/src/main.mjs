@@ -1,0 +1,1 @@
+export function evaluate({stages=[]}={}){const failed=stages.filter(s=>s.ok!==true);return{ok:true,alert:failed.length>0,failed,realOrderAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

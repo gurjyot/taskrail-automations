@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags out of stock',()=>assert.equal(evaluate({products:[{stock:0}]}).alert,true))

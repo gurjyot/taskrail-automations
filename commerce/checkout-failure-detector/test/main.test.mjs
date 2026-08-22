@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('never authorizes order',()=>assert.equal(evaluate({stages:[{ok:false}]}).realOrderAuthorized,false))

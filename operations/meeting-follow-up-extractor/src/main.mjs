@@ -1,0 +1,1 @@
+export function evaluate({actionItems=[]}={}){const tasks=actionItems.map((x,i)=>({id:x.id||`action-${i+1}`,task:x.task||x.text||'',owner:x.owner||'',dueAt:x.dueAt||null,status:'pending'}));return{ok:true,tasks,count:tasks.length,mutationAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

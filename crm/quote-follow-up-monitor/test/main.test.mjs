@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags stale quote',()=>assert.equal(evaluate({now:Date.parse('2026-08-23'),quotes:[{sentAt:'2026-08-10'}]}).alert,true))

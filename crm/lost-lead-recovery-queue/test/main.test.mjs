@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('queues old lost lead',()=>{const r=evaluate({now:Date.parse('2026-08-23T00:00:00Z'),leads:[{status:'lost',updatedAt:'2026-06-01T00:00:00Z'}]});assert.equal(r.count,1)})

@@ -1,0 +1,1 @@
+export function evaluate({quotes=[],followupDays=3,now=Date.now()}={}){const due=quotes.filter(q=>!q.respondedAt&&Number.isFinite(Date.parse(q.sentAt))&&(now-Date.parse(q.sentAt))/86400000>=followupDays);return{ok:true,alert:due.length>0,due,count:due.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

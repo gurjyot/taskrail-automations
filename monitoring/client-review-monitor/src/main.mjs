@@ -1,0 +1,1 @@
+export function evaluate({reviews=[],seenIds=[]}={}){const seen=new Set(seenIds.map(String));const fresh=reviews.filter(r=>!seen.has(String(r.id)));return{ok:true,alert:fresh.length>0,newReviews:fresh,count:fresh.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

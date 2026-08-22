@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('finds new content',()=>assert.equal(evaluate({observed:[{url:'x'}]}).alert,true))

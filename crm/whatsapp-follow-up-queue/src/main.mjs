@@ -1,0 +1,1 @@
+export function evaluate({items=[],now=Date.now()}={}){const queue=items.filter(i=>!i.completed&&(!i.dueAt||Date.parse(i.dueAt)<=now)).sort((a,b)=>Number(b.priority||0)-Number(a.priority||0));return{ok:true,queue,count:queue.length,sendAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

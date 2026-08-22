@@ -1,0 +1,1 @@
+export function evaluate({credentials=[],warnDays=14,now=Date.now()}={}){const due=credentials.filter(c=>c.expiresAt&&((Date.parse(c.expiresAt)-now)/86400000)<=warnDays).map(({name,expiresAt,type})=>({name,expiresAt,type}));return{ok:true,alert:due.length>0,due,count:due.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

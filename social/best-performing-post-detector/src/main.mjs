@@ -1,0 +1,1 @@
+export function evaluate({posts=[],weights={engagement:1,clicks:1,leads:2}}={}){const ranked=posts.map(p=>({...p,score:Object.entries(weights).reduce((s,[k,w])=>s+Number(p[k]||0)*Number(w),0)})).sort((a,b)=>b.score-a.score);return{ok:true,ranked,winner:ranked[0]||null};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

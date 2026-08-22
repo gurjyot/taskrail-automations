@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags price change',()=>assert.equal(evaluate({previous:[{id:1,price:100}],current:[{id:1,price:120}]}).alert,true))

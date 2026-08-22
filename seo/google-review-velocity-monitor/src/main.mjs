@@ -1,0 +1,1 @@
+export function evaluate({currentRate,baselineRate,tolerance=0.3}={}){const c=Number(currentRate),b=Number(baselineRate);const change=b?(c-b)/b:0;return{ok:true,alert:b>0&&change<=-Math.abs(tolerance),currentRate:c,baselineRate:b,change};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

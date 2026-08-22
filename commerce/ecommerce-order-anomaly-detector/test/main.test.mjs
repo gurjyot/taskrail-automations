@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags drop',()=>assert.equal(evaluate({current:{orders:5},baseline:{orders:10}}).alert,true))

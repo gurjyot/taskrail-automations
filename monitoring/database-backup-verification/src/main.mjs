@@ -1,0 +1,1 @@
+export function evaluate({backups=[],maxAgeHours=30,now=Date.now()}={}){const failed=backups.filter(b=>b.status!=='success'||(now-Date.parse(b.completedAt))/3600000>maxAgeHours||b.checksumValid===false);return{ok:true,alert:failed.length>0,failed};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

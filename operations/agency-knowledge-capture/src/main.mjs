@@ -1,0 +1,1 @@
+export function evaluate({issue='',resolution='',evidence=[]}={}){const candidate={title:String(issue).slice(0,120),problem:issue,resolution,evidence,status:'review-required'};return{ok:true,candidate,publishAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}
