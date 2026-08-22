@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags unseen review',()=>assert.equal(evaluate({reviews:[{id:2}],seenIds:[1]}).count,1))
