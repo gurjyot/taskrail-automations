@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags 404',()=>assert.equal(evaluate({links:[{status:404}]}).count,1))

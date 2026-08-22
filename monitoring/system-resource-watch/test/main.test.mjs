@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags disk pressure',()=>assert.equal(evaluate({metrics:{disk:95}}).alert,true))

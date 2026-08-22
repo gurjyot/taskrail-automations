@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags failed backup',()=>assert.equal(evaluate({backups:[{status:'failed'}]}).alert,true))

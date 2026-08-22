@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('does not return secrets',()=>{const r=evaluate({now:0,credentials:[{name:'x',type:'oauth',expiresAt:'1970-01-02',secret:'no'}]});assert.equal('secret'in r.due[0],false)})

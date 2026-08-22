@@ -1,0 +1,1 @@
+export function evaluate({forms=[]}={}){const failed=forms.filter(f=>f.submitted!==true||f.confirmed!==true||Number(f.status||200)>=400);return{ok:true,alert:failed.length>0,failed,count:failed.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

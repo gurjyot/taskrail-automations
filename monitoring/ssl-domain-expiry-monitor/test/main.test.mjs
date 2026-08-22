@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('warns near expiry',()=>assert.equal(evaluate({now:Date.parse('2026-08-01'),resources:[{expiresAt:'2026-08-20'}]}).alert,true))

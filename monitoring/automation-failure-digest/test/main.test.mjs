@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('keeps only failures',()=>assert.equal(evaluate({runs:[{status:'success'},{status:'failed'}]}).count,1))

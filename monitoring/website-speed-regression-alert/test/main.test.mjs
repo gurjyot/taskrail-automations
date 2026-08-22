@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags slowdown',()=>assert.equal(evaluate({currentMs:1500,baselineMs:1000}).alert,true))

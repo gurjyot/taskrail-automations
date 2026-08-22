@@ -1,0 +1,1 @@
+export function evaluate({links=[]}={}){const broken=links.filter(l=>Number(l.status||0)>=400||l.error);return{ok:true,alert:broken.length>0,broken,count:broken.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

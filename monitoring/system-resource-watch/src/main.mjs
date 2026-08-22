@@ -1,0 +1,1 @@
+export function evaluate({metrics={},thresholds={cpu:90,memory:90,disk:90}}={}){const findings=Object.entries(thresholds).filter(([k,t])=>Number(metrics[k]||0)>=Number(t)).map(([metric,threshold])=>({metric,value:Number(metrics[metric]||0),threshold}));return{ok:true,alert:findings.length>0,findings};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

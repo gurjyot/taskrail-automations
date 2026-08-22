@@ -1,0 +1,1 @@
+export function evaluate({currentMs,baselineMs,tolerance=0.25}={}){const c=Number(currentMs),b=Number(baselineMs);if(!(c>=0&&b>0))throw new Error('valid currentMs and baselineMs required');const change=(c-b)/b;return{ok:true,alert:change>=tolerance,currentMs:c,baselineMs:b,change};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}
