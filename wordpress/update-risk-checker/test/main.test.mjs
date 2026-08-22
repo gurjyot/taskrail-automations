@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('blocks risky update',()=>assert.equal(evaluate({updates:[{compatible:false,backupReady:false}]}).blocked.length,1))

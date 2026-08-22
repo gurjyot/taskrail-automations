@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('detects drift',()=>assert.equal(evaluate({documented:{x:1},observed:{x:2}}).alert,true))

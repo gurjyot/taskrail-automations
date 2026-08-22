@@ -1,0 +1,1 @@
+export function evaluate({products=[],minimumStock=1}={}){const low=products.filter(p=>p.important!==false&&(p.available===false||Number(p.stock||0)<minimumStock));return{ok:true,alert:low.length>0,low};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

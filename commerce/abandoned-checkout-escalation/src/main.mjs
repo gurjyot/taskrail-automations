@@ -1,0 +1,1 @@
+export function evaluate({checkouts=0,orders=0,baselineRate=0,tolerance=0.2}={}){const rate=checkouts>0?1-Number(orders)/Number(checkouts):0;return{ok:true,rate,baselineRate:Number(baselineRate),alert:baselineRate>0&&rate-baselineRate>=tolerance};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

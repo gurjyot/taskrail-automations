@@ -1,0 +1,1 @@
+export function evaluate({observed=[],knownFingerprints=[]}={}){const known=new Set(knownFingerprints);const fresh=observed.filter(x=>!known.has(x.fingerprint||x.url));return{ok:true,alert:fresh.length>0,newContent:fresh};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

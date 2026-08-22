@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags undelivered report',()=>assert.equal(evaluate({reports:[{delivered:false}]}).count,1))

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags high abandonment',()=>assert.equal(evaluate({checkouts:10,orders:2,baselineRate:.4}).alert,true))

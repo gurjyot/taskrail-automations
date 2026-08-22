@@ -1,0 +1,1 @@
+export function evaluate({ownTopics=[],competitorTopics=[]}={}){const own=new Set(ownTopics.map(x=>String(x).toLowerCase()));const gaps=[...new Set(competitorTopics.map(x=>String(x).toLowerCase()))].filter(x=>!own.has(x));return{ok:true,gaps,count:gaps.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

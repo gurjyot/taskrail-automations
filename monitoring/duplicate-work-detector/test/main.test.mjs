@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('finds duplicates',()=>assert.equal(evaluate({items:[{key:'x'},{key:'x'}]}).alert,true))
