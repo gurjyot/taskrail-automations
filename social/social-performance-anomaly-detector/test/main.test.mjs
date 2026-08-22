@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags reach anomaly',()=>assert.equal(evaluate({current:{reach:50},baseline:{reach:100}}).alert,true))

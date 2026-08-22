@@ -1,0 +1,1 @@
+export function evaluate({posts=[]}={}){const ready=posts.filter(p=>p.approved===true&&p.asset&&p.platform&&p.scheduledAt);const blocked=posts.filter(p=>!ready.includes(p));return{ok:true,ready,blocked,publishAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

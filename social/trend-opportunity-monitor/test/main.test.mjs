@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('keeps relevant trend',()=>assert.equal(evaluate({trends:[{relevance:1,momentum:1,recency:1}]}).opportunities.length,1))

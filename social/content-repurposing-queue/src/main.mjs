@@ -1,0 +1,1 @@
+export function evaluate({content=[],minimumScore=1}={}){const queue=content.filter(c=>Number(c.performanceScore||0)>=minimumScore).sort((a,b)=>Number(b.performanceScore||0)-Number(a.performanceScore||0));return{ok:true,queue,count:queue.length};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

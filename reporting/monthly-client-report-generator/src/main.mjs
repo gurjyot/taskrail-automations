@@ -1,0 +1,1 @@
+export function evaluate({client='',period='',sections={}}={}){const ordered=['ads','seo','website','crm','social','delivery'].filter(k=>sections[k]!=null).map(k=>({name:k,data:sections[k]}));return{ok:true,report:{client,period,sections:ordered},deliveryAuthorized:false};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

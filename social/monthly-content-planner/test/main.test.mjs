@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('creates requested slots',()=>assert.equal(evaluate({themes:[{name:'x'}],slots:4}).plan.length,4))

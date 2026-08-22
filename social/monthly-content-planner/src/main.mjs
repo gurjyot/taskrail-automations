@@ -1,0 +1,1 @@
+export function evaluate({themes=[],slots=12}={}){const sorted=[...themes].sort((a,b)=>Number(b.priority||0)-Number(a.priority||0));const plan=Array.from({length:Math.max(0,slots)},(_,i)=>({slot:i+1,theme:sorted.length?sorted[i%sorted.length]:null}));return{ok:true,plan};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

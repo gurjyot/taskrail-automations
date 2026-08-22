@@ -1,0 +1,1 @@
+{"schema":1,"name":"social-performance-anomaly-detector","category":"social","taskrailCompatibility":"3.0.x","capabilities":["social-read"],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}

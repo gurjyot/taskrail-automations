@@ -1,0 +1,1 @@
+export function evaluate({trends=[],minimumScore=.6}={}){const opportunities=trends.map(t=>({...t,score:(Number(t.relevance||0)+Number(t.momentum||0)+Number(t.recency||0))/3})).filter(t=>t.score>=minimumScore).sort((a,b)=>b.score-a.score);return{ok:true,opportunities};}if(process.argv.includes('--health')){console.log('ok');process.exit(0)}

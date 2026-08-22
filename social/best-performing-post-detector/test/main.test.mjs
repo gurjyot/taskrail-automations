@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('selects winner',()=>assert.equal(evaluate({posts:[{id:1,engagement:1},{id:2,engagement:3}]}).winner.id,2))

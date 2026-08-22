@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('keeps delivery separate',()=>assert.equal(evaluate({sections:{ads:{}}}).deliveryAuthorized,false))
