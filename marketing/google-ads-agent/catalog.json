@@ -1,0 +1,1 @@
+{"name":"google-ads-agent","category":"marketing","taskrailCompatibility":"3.0.x","capabilities":["google-ads","ads-baselines","ads-anomaly-detection"],"components":["config","log","state","concurrency"],"certification":"reference","health":"runtimeHealthCommand"}

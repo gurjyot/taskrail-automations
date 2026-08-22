@@ -1,0 +1,1 @@
+{"name":"technical-indexing-watch","category":"seo","taskrailCompatibility":"3.0.x","capabilities":["google-search-console","http-health-check"],"components":["config","log","state","concurrency"],"certification":"reference","health":"runtimeHealthCommand"}

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags noindex',()=>assert.equal(evaluate({urls:[{url:'x',noindex:true}]}).issues[0].type,'noindex'));

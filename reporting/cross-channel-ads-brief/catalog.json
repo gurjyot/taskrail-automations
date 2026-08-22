@@ -1,0 +1,1 @@
+{"name":"cross-channel-ads-brief","category":"reporting","taskrailCompatibility":"3.0.x","capabilities":["meta-ads","google-ads","telegram-bot"],"components":["config","log"],"certification":"reference","health":"runtimeHealthCommand"}

@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('detects competing pages',()=>assert.equal(evaluate({rows:[{query:'seo',page:'/a',impressions:100,position:8},{query:'seo',page:'/b',impressions:90,position:11}]}).issues.length,1));

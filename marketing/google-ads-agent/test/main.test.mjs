@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('reduces deteriorating account',()=>{const r=evaluate({current:{spend:100,conversions:5,cpa:20,roas:1},previous:{spend:100,conversions:10,cpa:10,roas:2}});assert.equal(r.decision,'REDUCE');assert.equal(r.mutationAllowed,false)});

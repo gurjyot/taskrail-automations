@@ -1,0 +1,1 @@
+{"name":"review-monitor-reply-draft","category":"seo","taskrailCompatibility":"3.0.x","capabilities":["google-business-profile"],"components":["config","log","state","idempotency"],"certification":"reference","health":"runtimeHealthCommand"}

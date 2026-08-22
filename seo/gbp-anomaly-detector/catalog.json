@@ -1,0 +1,1 @@
+{"name":"gbp-anomaly-detector","category":"seo","taskrailCompatibility":"3.0.x","capabilities":["google-business-profile","ads-anomaly-detection"],"components":["config","log","state"],"certification":"reference","health":"runtimeHealthCommand"}

@@ -1,0 +1,1 @@
+{"name":"ads-tracking-failure-detector","category":"monitoring","taskrailCompatibility":"3.0.x","capabilities":["meta-ads","google-ads"],"components":["config","log","state"],"certification":"reference","health":"runtimeHealthCommand"}

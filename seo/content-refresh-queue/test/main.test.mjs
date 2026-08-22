@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('prioritizes declining page',()=>assert.equal(evaluate({pages:[{url:'a',previousClicks:100,currentClicks:50,currentImpressions:1000,position:8}]}).queue[0].recommendation,'refresh-now'));

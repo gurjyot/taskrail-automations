@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('detects fatigue',()=>{const r=evaluate({current:{frequency:4,ctr:0.8,cpc:12,cpa:300},previous:{frequency:2,ctr:1.2,cpc:8,cpa:200},ageDays:30});assert.equal(r.fatigued,true);assert.equal(r.creativeRequest,true)});

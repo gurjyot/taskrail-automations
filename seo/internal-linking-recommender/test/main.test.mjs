@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('recommends related link',()=>assert.ok(evaluate({pages:[{url:'/a',title:'WordPress SEO guide'},{url:'/b',title:'WordPress SEO tips'}]}).recommendations.length));

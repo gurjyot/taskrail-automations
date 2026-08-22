@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags Maps decline',()=>assert.equal(evaluate({current:{maps:50},baseline:{maps:100}}).alert,true));

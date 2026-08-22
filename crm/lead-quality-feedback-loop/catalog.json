@@ -1,0 +1,1 @@
+{"name":"lead-quality-feedback-loop","category":"crm","taskrailCompatibility":"3.0.x","capabilities":["meta-ads","google-ads","twenty-crm"],"components":["config","log","state","idempotency"],"certification":"reference","health":"runtimeHealthCommand"}

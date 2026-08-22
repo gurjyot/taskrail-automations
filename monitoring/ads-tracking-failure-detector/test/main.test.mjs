@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('flags signal disappearance',()=>{const r=evaluate({current:{spend:100,clicks:50,conversions:0,ctr:1},baseline:{conversionRate:.1,conversions:5,ctr:1}});assert.equal(r.alert,true)});

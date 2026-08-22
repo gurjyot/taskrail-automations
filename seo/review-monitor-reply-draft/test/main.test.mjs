@@ -1,0 +1,1 @@
+import test from'node:test';import assert from'node:assert/strict';import{evaluate}from'../src/main.mjs';test('negative review requires attention',()=>{const r=evaluate({review:{rating:1,text:'bad'}});assert.equal(r.priority,'high');assert.equal(r.autoPublish,false)});
