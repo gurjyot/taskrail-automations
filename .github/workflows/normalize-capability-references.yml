@@ -39,33 +39,40 @@ jobs:
             if (!category.isDirectory() || category.name.startsWith('.') || ['node_modules','scripts'].includes(category.name)) continue;
             for (const automation of fs.readdirSync(category.name, { withFileTypes: true })) {
               if (!automation.isDirectory()) continue;
-              const file = path.join(category.name, automation.name, 'automation.json');
-              if (!fs.existsSync(file)) continue;
-              const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+              const dir = path.join(category.name, automation.name);
+              const manifestFile = path.join(dir, 'automation.json');
+              const catalogFile = path.join(dir, 'catalog.json');
+              if (!fs.existsSync(manifestFile)) continue;
+              const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
               const before = Array.isArray(manifest.capabilities) ? manifest.capabilities : [];
               const after = before.filter((name) => valid.has(name));
               const removed = before.filter((name) => !valid.has(name));
               if (!removed.length) continue;
               manifest.capabilities = after;
-              fs.writeFileSync(file, `${JSON.stringify(manifest)}\n`);
-              changed.push({ file, removed, retained: after });
+              fs.writeFileSync(manifestFile, `${JSON.stringify(manifest)}\n`);
+              if (fs.existsSync(catalogFile)) {
+                const catalog = JSON.parse(fs.readFileSync(catalogFile, 'utf8'));
+                catalog.capabilities = after;
+                fs.writeFileSync(catalogFile, `${JSON.stringify(catalog)}\n`);
+              }
+              changed.push({ dir, removed, retained: after });
             }
           }
           console.log(JSON.stringify({ validCapabilities: [...valid].sort(), changedCount: changed.length, changed }, null, 2));
           NODE
       - run: npm test
       - run: npm run check
-      - name: Commit normalized manifests
+      - name: Commit normalized capability surfaces
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- '*/*/automation.json'; then
+          if git diff --quiet -- '*/*/automation.json' '*/*/catalog.json'; then
             echo 'No capability references required normalization.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- '*/*/automation.json'
+          git add -- '*/*/automation.json' '*/*/catalog.json'
           git commit -m 'fix: remove nonexistent capability references'
           git push
       - name: Report result
