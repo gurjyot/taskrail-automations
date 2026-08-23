@@ -1,1 +1,1 @@
-{"schema":1,"name":"update-risk-checker","category":"wordpress","taskrailCompatibility":"3.0.x","capabilities":["wordpress-read"],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}
+{"schema":1,"name":"update-risk-checker","category":"wordpress","taskrailCompatibility":"3.0.x","capabilities":[],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}

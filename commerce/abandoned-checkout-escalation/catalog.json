@@ -1,1 +1,1 @@
-{"schema":1,"name":"abandoned-checkout-escalation","category":"commerce","taskrailCompatibility":"3.0.x","capabilities":["commerce-read"],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}
+{"schema":1,"name":"abandoned-checkout-escalation","category":"commerce","taskrailCompatibility":"3.0.x","capabilities":[],"components":["config","log"],"certification":{"status":"reference","testedAt":"2026-08-23"},"health":{"contract":"runtimeHealthCommand"}}
