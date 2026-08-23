@@ -1,0 +1,81 @@
+name: Normalize TaskRail Capability References
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  normalize:
+    if: github.actor == github.repository_owner && github.event.issue.title == 'Normalize TaskRail capability references'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/checkout@v4
+        with:
+          repository: gurjyot/taskrail-capabilities
+          path: .capability-hub
+      - name: Remove nonexistent capability declarations
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE' | tee normalization.txt
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const hub = path.resolve('.capability-hub/capabilities');
+          const valid = new Set(fs.readdirSync(hub, { withFileTypes: true })
+            .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(hub, entry.name, 'capability.json')))
+            .map((entry) => entry.name));
+
+          const changed = [];
+          for (const category of fs.readdirSync('.', { withFileTypes: true })) {
+            if (!category.isDirectory() || category.name.startsWith('.') || ['node_modules','scripts'].includes(category.name)) continue;
+            for (const automation of fs.readdirSync(category.name, { withFileTypes: true })) {
+              if (!automation.isDirectory()) continue;
+              const file = path.join(category.name, automation.name, 'automation.json');
+              if (!fs.existsSync(file)) continue;
+              const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+              const before = Array.isArray(manifest.capabilities) ? manifest.capabilities : [];
+              const after = before.filter((name) => valid.has(name));
+              const removed = before.filter((name) => !valid.has(name));
+              if (!removed.length) continue;
+              manifest.capabilities = after;
+              fs.writeFileSync(file, `${JSON.stringify(manifest)}\n`);
+              changed.push({ file, removed, retained: after });
+            }
+          }
+          console.log(JSON.stringify({ validCapabilities: [...valid].sort(), changedCount: changed.length, changed }, null, 2));
+          NODE
+      - run: npm test
+      - run: npm run check
+      - name: Commit normalized manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- '*/*/automation.json'; then
+            echo 'No capability references required normalization.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*/*/automation.json'
+          git commit -m 'fix: remove nonexistent capability references'
+          git push
+      - name: Report result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          report="$(tail -c 50000 normalization.txt 2>/dev/null || echo 'normalization report unavailable')"
+          gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "\`\`\`json\n${report}\n\`\`\`"
+          gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY"
