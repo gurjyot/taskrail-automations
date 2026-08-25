@@ -1,0 +1,3 @@
+# Claude repository instructions
+
+Read `AGENTS.md` and `docs/README.md` before changing any automation. Documentation is part of implementation: update the automation-local README/manifests and affected repository docs in the same iteration. Reuse TaskRail components/capabilities, keep workflows generic and isolated, never add secrets, and never claim verification that did not run. `AGENTS.md` is authoritative.
