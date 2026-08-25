@@ -1,0 +1,1 @@
+Read `/AGENTS.md` and `/docs/README.md` before changes. Documentation is part of implementation: update automation-local README/manifests and affected root docs in the same iteration. Keep automations generic, thin, isolated, secret-free, and capability-first. Never claim TaskRail/tests/deployment verification that did not actually run.
